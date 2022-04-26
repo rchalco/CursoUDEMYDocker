@@ -1,6 +1,6 @@
 #POD for deploy libreria
 apiVersion: apps/v1
-kind: Deploymnent
+kind: Deployment
 metadata:
   name: microservice-seguridad-deploy
   labels:

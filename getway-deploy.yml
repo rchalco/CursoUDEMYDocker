@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deploymnent
+kind: Deployment
 metadata:
   name: getway-deploy
   labels:
