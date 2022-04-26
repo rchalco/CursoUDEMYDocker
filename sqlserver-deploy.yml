@@ -11,20 +11,20 @@ spec:
     matchLabels:
       app: microservice-seguridad
       name: mssql-pod
-    template:
-      metadata:
+  template:
+    metadata:
+      name: mssql-pod
+      labels:
+        app: microservice-seguridad
         name: mssql-pod
-        labels:
-          app: microservice-seguridad
-          name: mssql-pod
-        spec:
-          containers:
-            - name: mssql
-              image: mcr.microsoft.com/mssql/server
-              env:
-                - name: ACCPT_EULA
-                  value: "Y"
-                - name: SA_PASSWORD
-                  value: "admin.123"
-              ports:
-                - containerPort: 1433
+      spec:
+        containers:
+          - name: mssql
+            image: mcr.microsoft.com/mssql/server
+            env:
+              - name: ACCPT_EULA
+                value: "Y"
+              - name: SA_PASSWORD
+                value: "admin.123"
+            ports:
+              - containerPort: 1433
