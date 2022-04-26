@@ -1,15 +1,15 @@
 appVersion: v1
 kind: Service
 metadata:
-	name: mssql-service
-	lables:
-		name: mssql-service
-		app: database
+  name: mssql-service
+  lables:
+    name: mssql-service
+    app: database
 spec:
-	type: LoadBalancer
-	ports:
-		- port: 1433
-		targetPort: 1433
-	selector:
-		app: microservice-seguridad
-		name: mssql-pod
+  type: LoadBalancer
+  ports:
+    - port: 1433
+      targetPort: 1433
+  selector:
+    app: microservice-seguridad
+    name: mssql-pod
