@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deploymnent
+metadata:
+  name: getway-deploy
+  labels:
+    name: getway-deploy
+    app: microservice
+spec:
+  replicas: 1
+  selector:
+    matchLables:
+       app: getway
+       type: microservice
+  template:
+    metadata:
+      name: getway-pod
+      labels:
+        app: getway
+        type: microservice
+    spec:
+      containers:
+        - name: getway-app
+          image: rchalco/serviciosapigateway:latest
+          ports:
+            - containerPort: 80

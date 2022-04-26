@@ -1,0 +1,29 @@
+#POD for deploy libreria
+apiVersion: apps/v1
+kind: Deploymnent
+metadata:
+  name: microservice-seguridad-deploy
+  labels:
+    name: microservice-seguridad-deploy
+    app: microservice
+spec:
+  replicas: 2
+  selector:
+    matchLables:
+       app: microservice-seguridad
+       type: microservice
+  template:
+    metadata:
+      name: microservice-seguridad-pod
+      labels:
+        app: microservice-seguridad
+        type: microservice
+    spec:
+      containers:
+        - name: microservice-seguridad-app
+          image: rchalco/serviciosapiseguridad:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: ConnectionStrings__ConexionDB
+              value: Server=mssql-service;Database=Seguridad;User=sa;Password=admin.123
