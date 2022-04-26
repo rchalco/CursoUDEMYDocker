@@ -1,3 +1,4 @@
+#POD for deploy sql server
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,14 +18,14 @@ spec:
       labels:
         app: microservice-seguridad
         name: mssql-pod
-      spec:
-        containers:
-          - name: mssql
-            image: mcr.microsoft.com/mssql/server
-            env:
-              - name: ACCPT_EULA
-                value: "Y"
-              - name: SA_PASSWORD
-                value: "admin.123"
-            ports:
-              - containerPort: 1433
+    spec:
+      containers:
+        - name: mssql
+          image: mcr.microsoft.com/mssql/server
+          env:
+          - name: ACCEPT_EULA
+            value: "Y"
+          - name: SA_PASSWORD
+            value: "admin.123"
+          ports:
+            - containerPort: 1433
