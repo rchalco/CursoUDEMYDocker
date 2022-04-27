@@ -14,4 +14,4 @@ spec:
         - containerPort: 80
       #env:
       #  - name: ConnectionStrings__ConexionDB
-      #    value: "Data Source=mssql-service; Initial Catalog=Seguridad;User Id=sa;Password=admin.123;"          
+      #    value: Server=mssql-service;Database=Seguridad;User=sa;Password=admin.123
